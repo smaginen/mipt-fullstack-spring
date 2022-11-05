@@ -15,7 +15,6 @@ import com.smagin.mipt.fullstack.introduction.bankapp.service.TransferServiceImp
 @Configuration
 @EnableAspectJAutoProxy
 public class AppConfig {
-	
 	@Bean
 	public TransferService transferService(){
 		return new TransferServiceImpl(accountRepository(), transferRepository());

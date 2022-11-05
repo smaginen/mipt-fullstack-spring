@@ -6,8 +6,10 @@ import com.mipt.fullstack.spring.dto.CarDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +19,8 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 @Slf4j
 public class CarService {
+    @Value("car.model")
+    private String carModel;
     @Autowired
     private MailService mailService;
     private final CarRepository carRepository;

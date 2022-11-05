@@ -1,5 +1,6 @@
 package com.smagin.mipt.fullstack.introduction.bankapp.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.smagin.mipt.fullstack.introduction.bankapp.model.Account;
@@ -8,6 +9,7 @@ import com.smagin.mipt.fullstack.introduction.bankapp.repository.AccountReposito
 import com.smagin.mipt.fullstack.introduction.bankapp.repository.TransferRepository;
 @Component
 public class TransferServiceImpl implements TransferService {
+	@Value("read properties")
 
 	AccountRepository accountRepository;
 	
