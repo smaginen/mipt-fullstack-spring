@@ -1,8 +1,10 @@
-package com.mipt.fullstack.spring.domain;
+package com.mipt.fullstack.spring.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.mipt.fullstack.spring.domain.model.Car;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -27,6 +29,7 @@ public class Owner {
 
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
+	@ToString.Exclude
 	private List<Car> cars;
 	
 

@@ -1,8 +1,9 @@
-package com.mipt.fullstack.spring.domain;
+package com.mipt.fullstack.spring.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Car {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
 	private String brand;
@@ -27,6 +28,7 @@ public class Car {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "owner")
 	@JsonIgnore
+	@ToString.Exclude
 	private Owner owner;
 
 	public Car(String brand, String model, String color,
@@ -42,5 +44,6 @@ public class Car {
 	}
 
 
-	
+
+
 }

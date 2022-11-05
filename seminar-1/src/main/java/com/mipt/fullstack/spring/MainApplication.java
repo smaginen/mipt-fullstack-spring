@@ -1,9 +1,9 @@
 package com.mipt.fullstack.spring;
 
-import com.mipt.fullstack.spring.domain.Car;
-import com.mipt.fullstack.spring.domain.CarRepository;
-import com.mipt.fullstack.spring.domain.Owner;
-import com.mipt.fullstack.spring.domain.OwnerRepository;
+import com.mipt.fullstack.spring.domain.model.Car;
+import com.mipt.fullstack.spring.domain.repo.CarRepository;
+import com.mipt.fullstack.spring.domain.model.Owner;
+import com.mipt.fullstack.spring.domain.repo.OwnerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.persistence.Column;
 import java.util.Arrays;
 
 @SpringBootApplication
