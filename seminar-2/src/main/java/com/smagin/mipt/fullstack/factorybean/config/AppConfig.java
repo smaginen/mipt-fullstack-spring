@@ -10,8 +10,8 @@ import com.smagin.mipt.fullstack.factorybean.service.TransferService;
 @Configuration
 public class AppConfig {
 	@Bean
-	public TransferService transferService() throws Exception{
-		return new TransferService(accountRepository().getObject());
+	public TransferService transferService(AccountRepositoryFactoryBean bean) throws Exception{
+		return new TransferService(bean.getObject());
 	}
 	@Bean
 	public AccountRepositoryFactoryBean accountRepository(){

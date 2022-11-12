@@ -10,7 +10,7 @@ public class JdbcAccountRepository implements AccountRepository {
 
 	@Override
 	public Account findByAccountId(Long accountId) {
-		return new Account(accountId, "Arnav Rajput", new Amount(3000.0));
+		return new Account(accountId, "Ivan Ivanov", new Amount(3000.0));
 	}
 
 }

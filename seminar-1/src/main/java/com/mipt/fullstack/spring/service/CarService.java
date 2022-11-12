@@ -19,7 +19,6 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 @Slf4j
 public class CarService {
-    @Value("car.model")
     private String carModel;
     @Autowired
     private MailService mailService;
