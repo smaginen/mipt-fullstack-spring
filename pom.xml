@@ -12,11 +12,19 @@
         <module>seminar-1</module>
         <module>seminar-2</module>
         <module>seminar-3</module>
+        <module>seminar-4</module>
     </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+    </dependencies>
 
 </project>
