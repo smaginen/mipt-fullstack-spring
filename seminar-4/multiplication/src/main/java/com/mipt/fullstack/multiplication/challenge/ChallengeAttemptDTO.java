@@ -2,10 +2,7 @@ package com.mipt.fullstack.multiplication.challenge;
 
 import lombok.Value;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 
 /**
  * Attempt coming from the user

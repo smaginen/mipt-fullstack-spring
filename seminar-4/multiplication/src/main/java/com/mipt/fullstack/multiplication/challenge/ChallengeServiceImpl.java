@@ -1,13 +1,16 @@
 package com.mipt.fullstack.multiplication.challenge;
 
-import com.mipt.fullstack.multiplication.serviceclients.GamificationServiceClient;
-import com.mipt.fullstack.multiplication.user.User;
-import com.mipt.fullstack.multiplication.user.UserRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
+
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import com.mipt.fullstack.multiplication.user.User;
+import com.mipt.fullstack.multiplication.user.UserRepository;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -16,8 +19,9 @@ public class ChallengeServiceImpl implements ChallengeService {
 
     private final UserRepository userRepository;
     private final ChallengeAttemptRepository attemptRepository;
-    private final GamificationServiceClient gameClient;
+    private final ChallengeEventPub challengeEventPub;
 
+    @Transactional
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO attemptDTO) {
         // Check if the user already exists for that alias, otherwise create it
@@ -46,8 +50,8 @@ public class ChallengeServiceImpl implements ChallengeService {
         // Stores the attempt
         ChallengeAttempt storedAttempt = attemptRepository.save(checkedAttempt);
 
-        // Sends the attempt to gamification
-        gameClient.sendAttempt(storedAttempt);
+        // Publishes an event to notify potentially interested subscribers
+        challengeEventPub.challengeSolved(storedAttempt);
 
         return storedAttempt;
     }

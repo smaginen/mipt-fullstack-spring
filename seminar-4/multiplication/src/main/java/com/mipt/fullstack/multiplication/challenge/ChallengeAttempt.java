@@ -1,9 +1,7 @@
 package com.mipt.fullstack.multiplication.challenge;
 
+import lombok.*;
 import com.mipt.fullstack.multiplication.user.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 

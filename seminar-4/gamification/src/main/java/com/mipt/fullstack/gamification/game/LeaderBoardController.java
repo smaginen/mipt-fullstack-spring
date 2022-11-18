@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/leaders")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
 class LeaderBoardController {
 
     private final LeaderBoardService leaderBoardService;

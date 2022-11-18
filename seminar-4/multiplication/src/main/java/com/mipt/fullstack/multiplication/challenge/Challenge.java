@@ -1,9 +1,6 @@
 package com.mipt.fullstack.multiplication.challenge;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * This class represents a Challenge to solve a Multiplication (a * b).
